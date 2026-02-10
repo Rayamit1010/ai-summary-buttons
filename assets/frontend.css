@@ -1,0 +1,732 @@
+/* ============================================================================
+   AI Summary Buttons Pro - Ultra-Isolated Frontend Styles
+   Version: 2.5.1
+   This CSS uses maximum specificity and complete resets to prevent ANY
+   external theme/plugin/page builder interference
+   ============================================================================ */
+
+/* ============================================================================
+   WRAPPER - Main Container Isolation
+   ============================================================================ */
+div.aisb-wrapper {
+  /* Display & Box Model - Complete Reset */
+  display: block !important;
+  position: relative !important;
+  margin: 20px 0 !important;
+  padding: 0 !important;
+  width: auto !important;
+  max-width: 100% !important;
+  height: auto !important;
+  min-height: 0 !important;
+  
+  /* Typography Reset */
+  font-family: 'Poppins', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif !important;
+  font-size: 16px !important;
+  font-weight: 400 !important;
+  line-height: 1.5 !important;
+  color: inherit !important;
+  text-align: left !important;
+  text-transform: none !important;
+  letter-spacing: normal !important;
+  word-spacing: normal !important;
+  
+  /* Layout Reset */
+  float: none !important;
+  clear: both !important;
+  vertical-align: baseline !important;
+  
+  /* Visual Reset */
+  background: none !important;
+  border: none !important;
+  border-radius: 0 !important;
+  box-shadow: none !important;
+  outline: none !important;
+  opacity: 1 !important;
+  visibility: visible !important;
+  
+  /* Flexbox/Grid Reset */
+  flex: none !important;
+  flex-grow: 0 !important;
+  flex-shrink: 0 !important;
+  flex-basis: auto !important;
+  grid-area: auto !important;
+  align-self: auto !important;
+  justify-self: auto !important;
+  
+  /* Transform/Animation Reset */
+  transform: none !important;
+  filter: none !important;
+  
+  /* Isolation */
+  isolation: isolate !important;
+  z-index: 1 !important;
+  
+  /* Other */
+  cursor: default !important;
+  user-select: text !important;
+  -webkit-user-select: text !important;
+  -moz-user-select: text !important;
+  overflow: visible !important;
+}
+
+/* Universal Reset for All Children */
+div.aisb-wrapper *,
+div.aisb-wrapper *::before,
+div.aisb-wrapper *::after {
+  box-sizing: border-box !important;
+  margin: 0 !important;
+  padding: 0 !important;
+  border: 0 !important;
+  background: none !important;
+  font: inherit !important;
+  vertical-align: baseline !important;
+  text-decoration: none !important;
+  list-style: none !important;
+  transform: none !important;
+  transition: none !important;
+  animation: none !important;
+  flex: none !important;
+  grid-area: auto !important;
+}
+
+/* ============================================================================
+   LABEL - Text Above Buttons
+   ============================================================================ */
+div.aisb-wrapper > div.aisb-label,
+div.aisb-wrapper .aisb-label {
+  /* Display & Layout */
+  display: block !important;
+  position: relative !important;
+  width: 100% !important;
+  max-width: 100% !important;
+  margin: 0 0 16px 0 !important;
+  padding: 0 !important;
+  
+  /* Typography */
+  font-family: 'Poppins', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif !important;
+  font-size: 16px !important;
+  font-weight: 500 !important;
+  line-height: 1.5 !important;
+  color: #333333 !important;
+  text-align: left !important;
+  text-transform: none !important;
+  letter-spacing: normal !important;
+  word-spacing: normal !important;
+  white-space: normal !important;
+  
+  /* Visual */
+  background: none !important;
+  border: none !important;
+  box-shadow: none !important;
+  opacity: 1 !important;
+  visibility: visible !important;
+  
+  /* Reset */
+  float: none !important;
+  clear: none !important;
+  overflow: visible !important;
+}
+
+/* ============================================================================
+   BUTTONS CONTAINER
+   ============================================================================ */
+div.aisb-wrapper > div.aisb-buttons,
+div.aisb-wrapper .aisb-buttons {
+  /* Flexbox Layout */
+  display: flex !important;
+  flex-direction: row !important;
+  flex-wrap: wrap !important;
+  align-items: center !important;
+  justify-content: flex-start !important;
+  gap: 12px !important;
+  
+  /* Box Model */
+  position: relative !important;
+  width: 100% !important;
+  max-width: 100% !important;
+  margin: 0 !important;
+  padding: 0 !important;
+  
+  /* Visual Reset */
+  background: none !important;
+  border: none !important;
+  box-shadow: none !important;
+  
+  /* Reset */
+  float: none !important;
+  clear: none !important;
+  list-style: none !important;
+  overflow: visible !important;
+  z-index: auto !important;
+}
+
+/* ============================================================================
+   INDIVIDUAL BUTTON - Maximum Specificity
+   ============================================================================ */
+div.aisb-wrapper .aisb-buttons > button.aisb-btn,
+div.aisb-wrapper button.aisb-btn,
+button.aisb-btn[data-aisb-type] {
+  /* Flexbox for Content Alignment */
+  display: inline-flex !important;
+  flex-direction: row !important;
+  flex-wrap: nowrap !important;
+  align-items: center !important;
+  justify-content: center !important;
+  gap: 10px !important;
+  
+  /* Box Model */
+  position: relative !important;
+  width: auto !important;
+  min-width: 0 !important;
+  max-width: 100% !important;
+  height: auto !important;
+  min-height: 0 !important;
+  margin: 0 !important;
+  padding: 12px 20px !important;
+  
+  /* Border & Background - Will be overridden by inline styles */
+  border: 2px solid #000000 !important;
+  border-radius: 12px !important;
+  background-color: #10A37F !important;
+  background-image: none !important;
+  background-clip: padding-box !important;
+  
+  /* Typography */
+  font-family: 'Poppins', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif !important;
+  font-size: 15px !important;
+  font-weight: 500 !important;
+  line-height: 1.4 !important;
+  color: #FFFFFF !important;
+  text-align: center !important;
+  text-decoration: none !important;
+  text-transform: none !important;
+  letter-spacing: normal !important;
+  white-space: nowrap !important;
+  word-spacing: normal !important;
+  
+  /* Visual Effects */
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.12) !important;
+  opacity: 1 !important;
+  visibility: visible !important;
+  overflow: hidden !important;
+  
+  /* Font Smoothing */
+  -webkit-font-smoothing: antialiased !important;
+  -moz-osx-font-smoothing: grayscale !important;
+  
+  /* Cursor & Interaction */
+  cursor: pointer !important;
+  user-select: none !important;
+  -webkit-user-select: none !important;
+  -moz-user-select: none !important;
+  pointer-events: auto !important;
+  
+  /* Transitions */
+  transition: transform 0.25s cubic-bezier(0.4, 0, 0.2, 1), box-shadow 0.25s cubic-bezier(0.4, 0, 0.2, 1) !important;
+  
+  /* Layout Reset */
+  float: none !important;
+  clear: none !important;
+  vertical-align: middle !important;
+  
+  /* Grid/Flex Parent Overrides */
+  flex-grow: 0 !important;
+  flex-shrink: 0 !important;
+  flex-basis: auto !important;
+  align-self: auto !important;
+  justify-self: auto !important;
+  grid-area: auto !important;
+  
+  /* Outline */
+  outline: none !important;
+  outline-offset: 0 !important;
+  
+  /* Clip/Mask */
+  clip-path: none !important;
+  mask: none !important;
+  
+  /* Filter */
+  filter: none !important;
+  backdrop-filter: none !important;
+  
+  /* Other */
+  appearance: none !important;
+  -webkit-appearance: none !important;
+  -moz-appearance: none !important;
+  z-index: 1 !important;
+}
+
+/* Button Pseudo-element for Hover Overlay */
+div.aisb-wrapper button.aisb-btn::before,
+button.aisb-btn[data-aisb-type]::before {
+  content: '' !important;
+  position: absolute !important;
+  top: 0 !important;
+  left: 0 !important;
+  right: 0 !important;
+  bottom: 0 !important;
+  width: 100% !important;
+  height: 100% !important;
+  background: rgba(0, 0, 0, 0.1) !important;
+  opacity: 0 !important;
+  transition: opacity 0.25s ease !important;
+  pointer-events: none !important;
+  z-index: 1 !important;
+  border-radius: inherit !important;
+}
+
+/* Hover State */
+div.aisb-wrapper button.aisb-btn:hover,
+button.aisb-btn[data-aisb-type]:hover {
+  transform: translateY(-2px) !important;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.18) !important;
+}
+
+div.aisb-wrapper button.aisb-btn:hover::before,
+button.aisb-btn[data-aisb-type]:hover::before {
+  opacity: 1 !important;
+}
+
+/* Active/Click State */
+div.aisb-wrapper button.aisb-btn:active,
+button.aisb-btn[data-aisb-type]:active {
+  transform: translateY(0) !important;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.15) !important;
+}
+
+/* Focus State */
+div.aisb-wrapper button.aisb-btn:focus,
+div.aisb-wrapper button.aisb-btn:focus-visible,
+button.aisb-btn[data-aisb-type]:focus,
+button.aisb-btn[data-aisb-type]:focus-visible {
+  outline: 3px solid rgba(66, 153, 225, 0.5) !important;
+  outline-offset: 2px !important;
+}
+
+/* Disabled State */
+div.aisb-wrapper button.aisb-btn:disabled,
+button.aisb-btn[data-aisb-type]:disabled {
+  opacity: 0.6 !important;
+  cursor: not-allowed !important;
+  pointer-events: none !important;
+}
+
+/* ============================================================================
+   BUTTON ICON - Logo/SVG Container
+   ============================================================================ */
+div.aisb-wrapper button.aisb-btn > span.aisb-btn-icon,
+div.aisb-wrapper .aisb-btn-icon,
+button.aisb-btn span.aisb-btn-icon {
+  /* Flexbox */
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  flex-shrink: 0 !important;
+  flex-grow: 0 !important;
+  
+  /* Size */
+  width: 22px !important;
+  height: 22px !important;
+  min-width: 22px !important;
+  min-height: 22px !important;
+  max-width: 22px !important;
+  max-height: 22px !important;
+  
+  /* Position */
+  position: relative !important;
+  z-index: 2 !important;
+  
+  /* Reset */
+  margin: 0 !important;
+  padding: 0 !important;
+  background: none !important;
+  border: none !important;
+  line-height: 0 !important;
+  overflow: visible !important;
+}
+
+/* SVG Inside Icon */
+div.aisb-wrapper .aisb-btn-icon > svg,
+button.aisb-btn .aisb-btn-icon svg,
+span.aisb-btn-icon > svg {
+  /* Size */
+  width: 22px !important;
+  height: 22px !important;
+  min-width: 22px !important;
+  min-height: 22px !important;
+  max-width: 22px !important;
+  max-height: 22px !important;
+  
+  /* Display */
+  display: block !important;
+  
+  /* Color - Inherits from button */
+  fill: currentColor !important;
+  color: inherit !important;
+  
+  /* Reset */
+  margin: 0 !important;
+  padding: 0 !important;
+  border: none !important;
+  background: none !important;
+  overflow: visible !important;
+  vertical-align: middle !important;
+}
+
+/* SVG Path Elements */
+div.aisb-wrapper .aisb-btn-icon svg path,
+button.aisb-btn .aisb-btn-icon svg path {
+  fill: currentColor !important;
+}
+
+/* ============================================================================
+   BUTTON TEXT
+   ============================================================================ */
+div.aisb-wrapper button.aisb-btn > span.aisb-btn-text,
+div.aisb-wrapper .aisb-btn-text,
+button.aisb-btn span.aisb-btn-text {
+  /* Display */
+  display: flex !important;
+  align-items: center !important;
+  
+  /* Position */
+  position: relative !important;
+  z-index: 2 !important;
+  
+  /* Typography - Inherits from button */
+  font-family: inherit !important;
+  font-size: inherit !important;
+  font-weight: 500 !important;
+  line-height: 1 !important;
+  color: inherit !important;
+  text-decoration: none !important;
+  white-space: nowrap !important;
+  
+  /* Reset */
+  margin: 0 !important;
+  padding: 0 !important;
+  background: none !important;
+  border: none !important;
+  overflow: visible !important;
+}
+
+/* ============================================================================
+   LOGO POSITION VARIANTS
+   ============================================================================ */
+
+/* Left (Default) */
+div.aisb-wrapper button.aisb-btn.aisb-logo-left,
+button.aisb-btn.aisb-logo-left {
+  flex-direction: row !important;
+}
+
+/* Right */
+div.aisb-wrapper button.aisb-btn.aisb-logo-right,
+button.aisb-btn.aisb-logo-right {
+  flex-direction: row-reverse !important;
+}
+
+/* Top */
+div.aisb-wrapper button.aisb-btn.aisb-logo-top,
+button.aisb-btn.aisb-logo-top {
+  flex-direction: column !important;
+  gap: 8px !important;
+}
+
+/* Bottom */
+div.aisb-wrapper button.aisb-btn.aisb-logo-bottom,
+button.aisb-btn.aisb-logo-bottom {
+  flex-direction: column-reverse !important;
+  gap: 8px !important;
+}
+
+/* ============================================================================
+   RESPONSIVE DESIGN - Tablets
+   ============================================================================ */
+@media screen and (max-width: 768px) {
+  div.aisb-wrapper .aisb-buttons {
+    gap: 10px !important;
+  }
+  
+  div.aisb-wrapper button.aisb-btn,
+  button.aisb-btn[data-aisb-type] {
+    padding: 11px 18px !important;
+    font-size: 14px !important;
+    border-radius: 12px !important;
+    border-width: 2px !important;
+  }
+  
+  div.aisb-wrapper .aisb-btn-icon,
+  button.aisb-btn .aisb-btn-icon {
+    width: 20px !important;
+    height: 20px !important;
+    min-width: 20px !important;
+    min-height: 20px !important;
+    max-width: 20px !important;
+    max-height: 20px !important;
+  }
+  
+  div.aisb-wrapper .aisb-btn-icon svg,
+  button.aisb-btn .aisb-btn-icon svg {
+    width: 20px !important;
+    height: 20px !important;
+    min-width: 20px !important;
+    min-height: 20px !important;
+    max-width: 20px !important;
+    max-height: 20px !important;
+  }
+  
+  div.aisb-wrapper .aisb-label {
+    font-size: 15px !important;
+    margin-bottom: 14px !important;
+  }
+}
+
+/* ============================================================================
+   RESPONSIVE DESIGN - Mobile
+   ============================================================================ */
+@media screen and (max-width: 480px) {
+  div.aisb-wrapper {
+    margin: 16px 0 !important;
+  }
+  
+  div.aisb-wrapper .aisb-buttons {
+    gap: 8px !important;
+  }
+  
+  div.aisb-wrapper button.aisb-btn,
+  button.aisb-btn[data-aisb-type] {
+    padding: 10px 16px !important;
+    font-size: 13px !important;
+    gap: 8px !important;
+    border-radius: 12px !important;
+  }
+  
+  div.aisb-wrapper .aisb-btn-icon,
+  button.aisb-btn .aisb-btn-icon {
+    width: 18px !important;
+    height: 18px !important;
+    min-width: 18px !important;
+    min-height: 18px !important;
+    max-width: 18px !important;
+    max-height: 18px !important;
+  }
+  
+  div.aisb-wrapper .aisb-btn-icon svg,
+  button.aisb-btn .aisb-btn-icon svg {
+    width: 18px !important;
+    height: 18px !important;
+    min-width: 18px !important;
+    min-height: 18px !important;
+    max-width: 18px !important;
+    max-height: 18px !important;
+  }
+  
+  div.aisb-wrapper .aisb-label {
+    font-size: 14px !important;
+    margin-bottom: 12px !important;
+  }
+}
+
+/* ============================================================================
+   RESPONSIVE DESIGN - Small Mobile
+   ============================================================================ */
+@media screen and (max-width: 360px) {
+  div.aisb-wrapper button.aisb-btn,
+  button.aisb-btn[data-aisb-type] {
+    padding: 9px 14px !important;
+    font-size: 12px !important;
+    gap: 6px !important;
+  }
+  
+  div.aisb-wrapper .aisb-btn-icon,
+  button.aisb-btn .aisb-btn-icon {
+    width: 16px !important;
+    height: 16px !important;
+    min-width: 16px !important;
+    min-height: 16px !important;
+    max-width: 16px !important;
+    max-height: 16px !important;
+  }
+  
+  div.aisb-wrapper .aisb-btn-icon svg,
+  button.aisb-btn .aisb-btn-icon svg {
+    width: 16px !important;
+    height: 16px !important;
+    min-width: 16px !important;
+    min-height: 16px !important;
+    max-width: 16px !important;
+    max-height: 16px !important;
+  }
+}
+
+/* ============================================================================
+   DARK MODE SUPPORT
+   ============================================================================ */
+@media (prefers-color-scheme: dark) {
+  div.aisb-wrapper .aisb-label {
+    color: #e0e0e0 !important;
+  }
+  
+  div.aisb-wrapper button.aisb-btn,
+  button.aisb-btn[data-aisb-type] {
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.3) !important;
+  }
+  
+  div.aisb-wrapper button.aisb-btn:hover,
+  button.aisb-btn[data-aisb-type]:hover {
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.4) !important;
+  }
+}
+
+/* ============================================================================
+   PRINT STYLES
+   ============================================================================ */
+@media print {
+  div.aisb-wrapper {
+    display: none !important;
+  }
+}
+
+/* ============================================================================
+   REDUCED MOTION ACCESSIBILITY
+   ============================================================================ */
+@media (prefers-reduced-motion: reduce) {
+  div.aisb-wrapper button.aisb-btn,
+  button.aisb-btn[data-aisb-type],
+  div.aisb-wrapper button.aisb-btn::before,
+  button.aisb-btn[data-aisb-type]::before {
+    transition: none !important;
+  }
+  
+  div.aisb-wrapper button.aisb-btn:hover,
+  button.aisb-btn[data-aisb-type]:hover {
+    transform: none !important;
+  }
+}
+
+/* ============================================================================
+   ANTI-CONFLICT SAFEGUARDS
+   These rules specifically counter common theme/builder patterns
+   ============================================================================ */
+
+/* Counter Elementor */
+.elementor-widget-container div.aisb-wrapper button.aisb-btn,
+.elementor-section div.aisb-wrapper button.aisb-btn,
+.elementor div.aisb-wrapper button.aisb-btn,
+.elementor-element div.aisb-wrapper button.aisb-btn {
+  all: unset !important;
+  /* Then reapply our styles */
+  display: inline-flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  gap: 10px !important;
+  padding: 12px 20px !important;
+  border: 2px solid #000000 !important;
+  border-radius: 12px !important;
+  font-family: 'Poppins', sans-serif !important;
+  font-size: 15px !important;
+  font-weight: 500 !important;
+  line-height: 1.4 !important;
+  cursor: pointer !important;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.12) !important;
+  transition: transform 0.25s, box-shadow 0.25s !important;
+  white-space: nowrap !important;
+  user-select: none !important;
+  pointer-events: auto !important;
+  background-clip: padding-box !important;
+}
+
+/* Ensure buttons are visible in Elementor */
+.elementor-widget-container div.aisb-wrapper,
+.elementor-section div.aisb-wrapper,
+.elementor div.aisb-wrapper {
+  display: block !important;
+  visibility: visible !important;
+  opacity: 1 !important;
+  margin: 20px 0 !important;
+}
+
+.elementor-widget-container div.aisb-wrapper .aisb-buttons,
+.elementor-section div.aisb-wrapper .aisb-buttons {
+  display: flex !important;
+  flex-wrap: wrap !important;
+  gap: 12px !important;
+  visibility: visible !important;
+  opacity: 1 !important;
+}
+
+/* Elementor button icon fix */
+.elementor div.aisb-wrapper button.aisb-btn .aisb-btn-icon,
+.elementor div.aisb-wrapper button.aisb-btn .aisb-btn-icon svg {
+  display: block !important;
+  width: 22px !important;
+  height: 22px !important;
+  min-width: 22px !important;
+  min-height: 22px !important;
+  flex-shrink: 0 !important;
+  pointer-events: none !important;
+}
+
+/* Elementor button text fix */
+.elementor div.aisb-wrapper button.aisb-btn .aisb-btn-text {
+  display: inline-block !important;
+  flex-shrink: 0 !important;
+  white-space: nowrap !important;
+}
+
+/* Counter Divi */
+.et_pb_module div.aisb-wrapper button.aisb-btn,
+#et-boc div.aisb-wrapper button.aisb-btn {
+  all: unset !important;
+  display: inline-flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  gap: 10px !important;
+  padding: 12px 20px !important;
+  border: 2px solid #000000 !important;
+  border-radius: 12px !important;
+  font-family: 'Poppins', sans-serif !important;
+  font-size: 15px !important;
+  font-weight: 500 !important;
+  cursor: pointer !important;
+}
+
+/* Counter Gutenberg Blocks */
+.wp-block div.aisb-wrapper button.aisb-btn,
+.wp-block-group div.aisb-wrapper button.aisb-btn {
+  all: unset !important;
+  display: inline-flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  gap: 10px !important;
+  padding: 12px 20px !important;
+  border: 2px solid #000000 !important;
+  border-radius: 12px !important;
+  font-family: 'Poppins', sans-serif !important;
+  font-size: 15px !important;
+  font-weight: 500 !important;
+  cursor: pointer !important;
+}
+
+/* Counter Bootstrap */
+.container div.aisb-wrapper button.aisb-btn,
+.row div.aisb-wrapper button.aisb-btn,
+.col div.aisb-wrapper button.aisb-btn {
+  all: unset !important;
+  display: inline-flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  gap: 10px !important;
+  padding: 12px 20px !important;
+  border: 2px solid #000000 !important;
+  border-radius: 12px !important;
+  font-family: 'Poppins', sans-serif !important;
+  font-size: 15px !important;
+  font-weight: 500 !important;
+  cursor: pointer !important;
+}
+
+/* ============================================================================
+   END OF STYLESHEET
+   ============================================================================ */
