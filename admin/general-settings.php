@@ -20,14 +20,24 @@ function aisb_general_settings_page() {
         // Prompt customization is locked in free version
         // update_option('aisb_prompt', sanitize_textarea_field($_POST['aisb_prompt'] ?? ''));
         
-        update_option('aisb_auto_insert', sanitize_text_field($_POST['aisb_auto_insert'] ?? 'no'));
-        update_option('aisb_auto_insert_position', sanitize_text_field($_POST['aisb_auto_insert_position'] ?? 'after'));
+        $auto_insert = (isset($_POST['aisb_auto_insert']) && $_POST['aisb_auto_insert'] === 'yes') ? 'yes' : 'no';
+        $auto_insert_position = sanitize_text_field($_POST['aisb_auto_insert_position'] ?? 'after');
+        if (!in_array($auto_insert_position, ['before', 'after'], true)) {
+            $auto_insert_position = 'after';
+        }
+
+        $tracking_optin = (isset($_POST['aisb_tracking_optin']) && $_POST['aisb_tracking_optin'] === 'yes') ? 'yes' : 'no';
+
+        update_option('aisb_auto_insert', $auto_insert);
+        update_option('aisb_auto_insert_position', $auto_insert_position);
+        update_option('aisb_tracking_optin', $tracking_optin);
         
         echo '<div class="notice notice-success is-dismissible"><p>Settings saved successfully!</p></div>';
     }
     
     $auto_insert = get_option('aisb_auto_insert', 'no');
     $auto_insert_position = get_option('aisb_auto_insert_position', 'after');
+    $tracking_optin = get_option('aisb_tracking_optin', 'no');
     ?>
     
     <div class="wrap aisb-admin-wrap">
@@ -83,6 +93,22 @@ function aisb_general_settings_page() {
                             <option value="after" <?php selected($auto_insert_position, 'after'); ?>>After Content</option>
                         </select>
                         <p class="description">Choose where to display the buttons when auto-insert is enabled.</p>
+                    </td>
+                </tr>
+
+                <tr>
+                    <th scope="row">Anonymous Usage Tracking</th>
+                    <td>
+                        <label>
+                            <input type="checkbox"
+                                   name="aisb_tracking_optin"
+                                   value="yes"
+                                   <?php checked($tracking_optin, 'yes'); ?>>
+                            Enable anonymous usage telemetry (opt-in)
+                        </label>
+                        <p class="description">
+                            Sends basic technical metadata (site domain, plugin version, WordPress/PHP versions) to help improve plugin quality.
+                        </p>
                     </td>
                 </tr>
             </table>

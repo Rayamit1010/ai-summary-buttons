@@ -16,7 +16,7 @@ Add beautiful AI-powered summary buttons to your WordPress site. Connect readers
 - **Responsive Design** - Beautiful on all devices
 - **Lightweight** - Optimized performance
 - **No API Keys Required** - Simple link-based integration
-- **Privacy Focused** - No data collection
+- **Privacy Focused** - Optional tracking is disabled by default (opt-in only)
 
 ## 🚀 Quick Start
 
