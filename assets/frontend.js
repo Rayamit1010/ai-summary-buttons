@@ -37,7 +37,9 @@
     var baseUrl = config.url_template || config.url;
     var url = baseUrl + encodedPrompt;
     
-    console.log('Opening AI service:', aiType, 'URL:', url);
+    if (AISB_DATA.debug) {
+      console.log('Opening AI service:', aiType, 'URL:', url);
+    }
     
     // Open in new tab
     window.open(url, '_blank', 'noopener,noreferrer');
@@ -82,8 +84,11 @@
    * Initialize the plugin
    */
   function init() {
-    // Use event delegation for better performance
-    document.addEventListener('click', handleButtonClick);
+    // Use delegated listeners only inside plugin wrappers.
+    var wrappers = document.querySelectorAll('.aisb-wrapper');
+    wrappers.forEach(function(wrapper) {
+      wrapper.addEventListener('click', handleButtonClick);
+    });
     
     // Optional: Add hover effects via JS (in addition to CSS)
     var buttons = document.querySelectorAll('.aisb-btn');

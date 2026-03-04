@@ -15,10 +15,12 @@ function ai_validate_license($key) {
         return false;
     }
     
-    // Replace with your actual license server URL
-    $license_server = 'https://yourdomain.com/license';
+    $license_server = apply_filters('aisb_license_server_url', '');
+    if (empty($license_server)) {
+        return false;
+    }
     
-    $response = wp_remote_post($license_server, [
+    $response = wp_remote_post(esc_url_raw($license_server), [
         'timeout' => 10,
         'body' => [
             'license' => sanitize_text_field($key),

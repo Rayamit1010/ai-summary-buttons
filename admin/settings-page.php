@@ -214,30 +214,8 @@ function aisb_save_button_configs() {
     if (!isset($_POST['aisb_configs']) || !is_array($_POST['aisb_configs'])) {
         return;
     }
-    
-    $saved_configs = [];
-    $default_configs = aisb_get_default_configs();
-    
-    foreach ($_POST['aisb_configs'] as $ai_type => $config) {
-        if (!isset($default_configs[$ai_type])) {
-            continue;
-        }
-        
-        $saved_configs[$ai_type] = [
-            'enabled' => isset($config['enabled']) && $config['enabled'] == '1',
-            'label' => sanitize_text_field($config['label'] ?? $default_configs[$ai_type]['label']),
-            'color' => sanitize_hex_color($config['color'] ?? $default_configs[$ai_type]['color']),
-            'text_color' => sanitize_hex_color($config['text_color'] ?? $default_configs[$ai_type]['text_color']),
-            'logo_position' => in_array($config['logo_position'] ?? 'left', ['left', 'right', 'top', 'bottom']) ? $config['logo_position'] : 'left',
-            'logo_svg' => wp_kses($config['logo_svg'] ?? $default_configs[$ai_type]['logo_svg'], [
-                'svg' => ['xmlns' => [], 'viewbox' => [], 'fill' => [], 'width' => [], 'height' => []],
-                'path' => ['d' => [], 'fill' => []],
-                'circle' => ['cx' => [], 'cy' => [], 'r' => [], 'fill' => []],
-                'rect' => ['x' => [], 'y' => [], 'width' => [], 'height' => [], 'fill' => []],
-                'g' => ['fill' => [], 'transform' => []],
-            ])
-        ];
-    }
+
+    $saved_configs = aisb_sanitize_configs($_POST['aisb_configs']);
     
     update_option('aisb_button_configs', $saved_configs);
     

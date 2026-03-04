@@ -11,9 +11,9 @@ if (!defined('ABSPATH')) {
 
 class AISB_Auto_Updater {
     
-    private $plugin_slug = 'ai-summary-buttons-pro/ai-summary-buttons.php';
+    private $plugin_slug = 'ai-summary-buttons/ai-summary-buttons.php';
     private $github_user = 'Rayamit1010';
-    private $github_repo = 'ai-summary-buttons-pro';
+    private $github_repo = 'ai-summary-buttons';
     private $current_version;
     
     public function __construct() {
@@ -84,7 +84,7 @@ class AISB_Auto_Updater {
         }
         
         $plugin_info = [
-            'name' => 'AI Summary Buttons Pro',
+            'name' => 'AI Summary Buttons',
             'slug' => dirname($this->plugin_slug),
             'version' => $remote_info->version,
             'author' => '<a href="https://github.com/' . $this->github_user . '">Amit Ray</a>',
@@ -219,6 +219,9 @@ class AISB_Auto_Updater {
      */
     public function update_notice() {
         $screen = get_current_screen();
+        if (!$screen || !isset($screen->id)) {
+            return;
+        }
         
         // Only show on plugins page
         if ($screen->id !== 'plugins') {
@@ -235,13 +238,13 @@ class AISB_Auto_Updater {
         if (version_compare($this->current_version, $remote_info->version, '<')) {
             ?>
             <div class="notice notice-info is-dismissible" style="border-left: 4px solid #2271b1; padding: 15px;">
-                <h3 style="margin-top: 0;">🚀 AI Summary Buttons Pro Update Available!</h3>
+                <h3 style="margin-top: 0;">🚀 AI Summary Buttons Update Available!</h3>
                 <p>
                     <strong>Version <?php echo esc_html($remote_info->version); ?></strong> is available. 
                     You are currently running <strong>version <?php echo esc_html($this->current_version); ?></strong>.
                 </p>
                 <p>
-                    <a href="<?php echo admin_url('plugins.php?plugin_status=upgrade'); ?>" class="button button-primary">
+                    <a href="<?php echo esc_url(admin_url('plugins.php?plugin_status=upgrade')); ?>" class="button button-primary">
                         Update Now
                     </a>
                     <a href="<?php echo esc_url($remote_info->url); ?>" target="_blank" class="button button-secondary">
@@ -254,6 +257,7 @@ class AISB_Auto_Updater {
     }
 }
 
-// Initialize the updater
-new AISB_Auto_Updater();
-
+// Initialize updater only when explicitly enabled for non-WordPress.org distributions.
+if (apply_filters('aisb_enable_external_updater', false)) {
+    new AISB_Auto_Updater();
+}

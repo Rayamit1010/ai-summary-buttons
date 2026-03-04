@@ -8,8 +8,8 @@ if (!defined('ABSPATH')) {
  * Auto-insert AI summary buttons after post content
  */
 add_filter('the_content', function ($content) {
-    // Only on single posts
-    if (!is_single()) {
+    // Only on single posts/pages
+    if (!is_singular(['post', 'page'])) {
         return $content;
     }
     
